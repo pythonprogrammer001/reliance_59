@@ -1,0 +1,641 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/css/bootstrap5-toggle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/js/bootstrap5-toggle.ecmas.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!------ Include the above in your HEAD tag ---------->
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta
+                            name="viewport" content="width=device-width, initial-scale=1">
+                            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+                            <title>
+                                Customer Inquiry Form</title>
+
+                            <!-- Bootstrap -->
+                            <link href="css/bootstrap.min.css" rel="stylesheet">
+                                <link href="css/dcalendar.picker.css" rel="stylesheet">
+                                    <style type="text/css">
+                                        #deceased {
+                                            background-color: wheat;
+                                            padding-top: 10px;
+                                            margin-bottom: 10px;
+                                        }
+                                        #companydet {
+                                            background-color: white;
+                                            padding-top: 10px;
+                                            margin-bottom: 10px;
+                                        }
+                                        .remove_field {
+                                            float: right;
+                                            cursor: pointer;
+                                            position: absolute;
+                                        }
+                                        .remove_field:hover {
+                                            text-decoration: none;
+                                        }
+
+                                        select#years {
+                                            height: 38px;
+                                        }
+
+
+                                        .sticky-header {
+                                            display: flex;
+                                            align-items: center;
+                                            position: sticky;
+                                            top: 0;
+                                            z-index: 1000;
+                                            /* background-color: #007bff; */
+                                            color: white;
+                                            /* padding: 15px; */
+                                        }
+                                        .sticky-header img {
+                                            max-width: 116px;
+                                            margin-right: 10px;
+                                        }
+                                        .sticky-header h5 {
+                                            flex: 1;
+                                            text-align: center;
+                                            margin: 0;
+                                            color: black;
+                                            padding-right: 154px;
+                                        }
+
+
+                                        .sticky-footer {
+                                            margin-top: auto;
+                                            z-index: 1000;
+                                        }
+
+
+                                        .panel-body {
+    padding: 15px;
+    background-color: #DDEEF1;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+                                        body {
+                                            background-color: #19869C;
+                                        }
+
+
+                                        h3, .h3 {
+    font-size: 24px;
+    padding-left: 38px;
+}
+
+
+
+
+
+
+
+.label-column {
+    text-align: right;
+    padding-right: 10px; /* Adjust this value as needed */
+    color: #666666;
+  }
+
+    .table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}                
+
+.table-borderless2{
+display: none;
+}
+
+
+.toggle.ios,
+  .toggle-on.ios,
+  .toggle-off.ios {
+    border-radius: 20rem;
+  }
+   .toggle.ios .toggle-handle {
+    border-radius: 20rem;
+  }
+
+
+
+
+
+
+
+
+
+
+  label {
+    display: inline-block;
+    max-width: 138%;
+    margin-bottom: 5px;
+    font-weight: 750;
+    color: #666666;
+    width: 110px;
+}
+
+
+
+
+  .container-fluid {
+
+    margin-bottom: -17px;
+}
+
+
+
+
+
+
+
+
+
+.custom-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to the right side */
+  }
+
+  .custom-footer button {
+    margin-left: 10px; /* Add some space between the buttons */
+  }
+
+
+  .panel-heading {
+    padding: 5px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 40px;
+}
+
+
+.panel{
+  border-radius:0px;
+}
+
+  
+
+</style>
+                                    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                                    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                                    <!--[if lt IE 9]>
+                                                                                      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                                                                                      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                                                                                    <![endif]-->
+                                    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><script src="js/jquery-1.12.4.js"> </script>
+                                    <script src="js/dcalendar.picker.js"></script>
+                                    <!-- Include all compiled plugins (below), or include individual files as needed -->
+                                    <script src="js/bootstrap.min.js"></script>
+                                    <script type='text/javascript'>
+                                        $(function () { // calendar call function
+                                            $('.datepicker').dcalendar();
+                                            $('.datepicker').dcalendarpicker();
+
+                                            var max_fields = 10; // maximum input boxes allowed
+                                            var x = 1; // initlal text box count
+
+                                            $('#add').click(function () {
+                                                if (x < max_fields) { // max input box allowed
+                                                    x++; // text box increment
+                                                    $("#addblock").before('<div class="col-md-12 col-sm-12" id="deceased">	<a href="#" class="remove_field" title="Remove">X</a>	<div class="form-group col-md-3 col-sm-3">            <label for="name">Name*</label>            <input type="text" class="form-control input-sm" id="name" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="gender">Gender*</label>            <input type="text" class="form-control input-sm" id="gender" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="age">Age*</label>            <input type="text" class="form-control input-sm" id="age" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="DOB">Date of Birth or Exact Birth Year*</label>            <input type="text" class="form-control input-sm datepicker" id="DOB' + x + '" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="DOD">Date of Death or Exact Death Year*</label>             <input type="text" class="form-control input-sm datepicker" id="DOD' + x + '" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="mother">Deceased Person\'s Mother Name*</label>            <input type="text" class="form-control input-sm" id="mother" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="father">Deceased Person\'s Father Name*</label>            <input type="text" class="form-control input-sm" id="father" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">	    <label for="photo">Upload Photo*</label>	    <input type="file" id="photo">	    <p class="help-block">Please upload individual photo. Group photo is not acceptable.</p>	</div></div>');
+
+                                                    $('.datepicker').dcalendarpicker();
+                                                } else {
+                                                    alert("Only 10 Names Allowed");
+                                                }
+                                            });
+                                            $(document).on('click', '.remove_field', function (e) {
+                                                e.preventDefault();
+                                                $(this).parent('div').remove();
+                                                x--;
+                                            });
+
+
+                                        });
+                                    </script>
+                                </head>
+                                <body>
+
+                                    <div class="panel" style="margin-top: 2px;
+                                    margin-left: 35px;
+                                    margin-right: 35px;
+                                    margin-bottom: 0px;
+                                    background-color: white;">
+                                        <div class="panel-heading">
+                                            <header class="sticky-header">
+                                                <img src="ril-side.jpg" alt="Logo">
+                                                    <h5 class="text-center">Customer Inquiry Form</h5>
+                                                </header>
+                                            </div>
+                                            <div class="panel-body">
+
+
+                                                
+                                                <div class="container-fluid">
+                                                    <!-- <h1>Bootstrap Form with Table-Like Layout</h1> -->
+                                                    <form>
+                                                      <div class="row justify-content-evently">
+                                                        <div class="col-md-12 col-sm-12" style="background-color: white;">
+                                                        <div class="col-md-5 col-sm-5">
+                                                          <table class="table table-borderless">
+                                                            <tr>
+                                                              <td class="label-column"><label for="Sector">*Sector:</label></td>
+                                                              <td>
+           
+                                                                    <select class="form-control input-sm" id="years" aria-label="Large select example">
+                                                                      <option>Select Sector</option>
+                                                                      <option>Petrochemicals</option>
+                                                                      <option>Refinery & Marketing</option>
+                                                                    </select>
+
+
+
+
+
+                                                                    
+
+                                                              </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="label-column"><label for="subSector">*Sub-Sectors:</label></td>
+                                                              <td>
+                                                                <select class="js-select2" multiple="multiple">
+                                                                  <option value="Aromatics" data-badge="">Aromatics</option>
+                                                                  <option value="Chemicals" data-badge="">Chemicals</option>
+                                                                  <option value="Elastomers" data-badge="">Elastomers</option>
+                                                                  <option value="Fiber Intermediates" data-badge="">Fiber Intermediates</option>
+                                                                  <option value="Polyester" data-badge="">Polyester</option>
+                                                                  <option value="Polymer" data-badge="">Polymer</option>
+                                                                </select>
+                                                              </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="label-column"><label for="subSector">*Products:</label></td>
+                                                              <td>
+                                                                <select class="js-select2" multiple="multiple">
+                                                                  <option value="Acrylonitrile" data-badge="">Acrylonitrile</option>
+                                                                  <option value="Apparels" data-badge="">Apparels</option>
+                                                                  <option value="Benzene" data-badge="">Benzene</option>
+                                                                  <option value="Byproducts -Chemical" data-badge="">Byproducts -Chemical</option>
+                                                                  <option value="Byproducts of MEG" data-badge="">Byproducts of MEG</option>
+                                                                  <option value="CBFS" data-badge="">CBFS</option>
+                                                                  <option value="Catalyst & Adsorbent" data-badge="">Catalyst & Adsorbent</option>
+                                                                  <option value="Caustic Soda" data-badge="">Caustic Soda</option>
+                                                                  <option value="EO & Chemicals" data-badge="">EO & Chemicals</option>
+                                                                  <option value="Ethylene" data-badge="">Ethylene</option>
+                                                                  <option value="FDY-Fully Drawn Yarn" data-badge="">FDY-Fully Drawn Yarn</option>
+                                                                  <option value="Fibre Fill" data-badge="">Fibre Fill</option>
+                                                                  <option value="Fuel" data-badge="">Fuel</option>
+                                                                  <option value="IDY-Indst Drawn Yarn" data-badge="">IDY-Indst Drawn Yarn</option>
+                                                                  <option value="LAB" data-badge="">LAB</option>
+                                                                  <option value="LPG Bulk" data-badge="">LPG Bulk</option>
+                                                                  <option value="MEG" data-badge="">MEG</option>
+                                                                  <option value="MTBE" data-badge="">MTBE</option>
+                                                                  <option value="Mixed Xylene" data-badge="">Mixed Xylene</option>
+                                                                  <option value="Naptha" data-badge="">Naptha</option>
+                                                                  <option value="Orthoxylene" data-badge="">Orthoxylene</option>
+                                                                  <option value="PET Chips" data-badge="">PET Chips</option>
+                                                                  <option value="POY" data-badge="">POY</option>
+                                                                  <option value="PSF" data-badge="">PSF</option>
+                                                                  <option value="PTA" data-badge="">PTA</option>
+                                                                  <option value="PX & Byproducts(JG)" data-badge="">PX & Byproducts(JG)</option>
+                                                                  <option value="Paraxylene" data-badge="">Paraxylene</option>
+                                                                  <option value="Pipes" data-badge="">Pipes</option>
+                                                                  <option value="Poly Ethylene" data-badge="">Poly Ethylene</option>
+                                                                  <option value="Poly Propylene" data-badge="">Poly Propylene</option>
+                                                                  <option value="Poly Vinyl Chloride" data-badge="">Poly Vinyl Chloride</option>
+                                                                  <option value="Polyester Chips" data-badge="">Polyester Chips</option>
+                                                                  <option value="RCCP" data-badge="">RCCP</option>
+                                                                  <option value="Recron 3S" data-badge="">Recron 3S</option>
+                                                                  <option value="Rubber" data-badge="">Rubber</option>
+                                                                  <option value="Solvents" data-badge="">Solvents</option>
+                                                                  <option value="Texturized Yarn" data-badge="">Texturized Yarn</option>
+                                                                  <option value="Toluene" data-badge="">Toluene</option>
+                                                                </select>
+                                                              </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="label-column"><label for="subSector">Sales Office:</label></td>
+                                                              <td>
+                                                                <select class="js-select2" multiple="multiple">
+                                                                  <option value="ASOJ" data-badge="">ASOJ</option>
+                                                                  <option value="Ahmedabad Office" data-badge="">Ahmedabad Office</option>
+                                                                  <option value="Andhra Pradesh Office" data-badge="">Andhra Pradesh Office</option>
+                                                                  <option value="Auarangabad Office" data-badge="">Auarangabad Office</option>
+                                                                  <option value="Bangalore Office" data-badge="">Bangalore Office</option>
+                                                                  <option value="Bihar Office" data-badge="">Bihar Office</option>
+                                                                  <option value="Calcutta Office" data-badge="">Calcutta Office</option>
+                                                                  <option value="Chandigarh Office" data-badge="">Chandigarh Office</option>
+                                                                  <option value="Chemical Business" data-badge="">Chemical Business</option>
+                                                                  <option value="Cochin Office" data-badge="">Cochin Office</option>
+                                                                  <option value="Coimbatore Office" data-badge="">Coimbatore Office</option>
+                                                                  <option value="Daman Office" data-badge="">Daman Office</option>
+                                                                  <option value="Delhi Office" data-badge="">Delhi Office</option>
+                                                                  <option value="Direct(From HO)" data-badge="">Direct(From HO)</option>
+                                                                  <option value="Export" data-badge="">Export</option>
+                                                                  <option value="FID Business" data-badge="">FID Business</option>
+                                                                  <option value="Gandhar Complex" data-badge="">Gandhar Complex</option>
+                                                                  <option value="Gujarat - North Office" data-badge="">Gujarat - North Office</option>
+                                                                  <option value="Gujarat - South Office" data-badge="">Gujarat - South Office</option>
+                                                                  <option value="Harayana Office" data-badge="">Harayana Office</option>
+                                                                  <option value="Hazira" data-badge="">Hazira</option>
+                                                                  <option value="Himachal Pradesh" data-badge="">Himachal Pradesh</option>
+                                                                  <option value="Hyderabad Office" data-badge="">Hyderabad Office</option>
+                                                                  <option value="Indore Office" data-badge="">Indore Office</option>
+                                                                  <option value="Jaipur Office" data-badge="">Jaipur Office</option>
+                                                                  <option value="Jamnagar Office" data-badge="">Jamnagar Office</option>
+                                                                  <option value="Jharkhand Office" data-badge="">Jharkhand Office</option>
+                                                                  <option value="Kakinada-E&P" data-badge="">Kakinada-E&P</option>
+                                                                  <option value="Kanpur Office" data-badge="">Kanpur Office</option>
+                                                                  <option value="Karnataka Office" data-badge="">Karnataka Office</option>
+                                                                  <option value="Kerala Office" data-badge="">Kerala Office</option>
+                                                                  <option value="Kuala Lumpur" data-badge="">Kuala Lumpur</option>
+                                                                  <option value="Ludhiana" data-badge="">Ludhiana</option>
+                                                                  <option value="Madhya Pradesh Office" data-badge="">Madhya Pradesh Office</option>
+                                                                  <option value="Madras Office" data-badge="">Madras Office</option>
+                                                                  <option value="Maharashtra" data-badge="">Maharashtra</option>
+                                                                  <option value="Maharashtra 1-WE/GOA" data-badge="">Maharashtra 1-WE/GOA</option>
+                                                                  <option value="Maharastra 2-EA/CHA" data-badge="">Maharastra 2-EA/CHA</option>
+                                                                  <option value="Mumbai North" data-badge="">Mumbai North</option>
+                                                                  <option value="Mumbai Office" data-badge="">Mumbai Office</option>
+                                                                  <option value="North East Office" data-badge="">North East Office</option>
+                                                                  <option value="Oil and Gas Division" data-badge="">Oil and Gas Division</option>
+                                                                  <option value="Orissa Office" data-badge="">Orissa Office</option>
+                                                                  <option value="PUNE" data-badge="">PUNE</option>
+                                                                  <option value="Patalganga" data-badge="">Patalganga</option>
+                                                                  <option value="Polyester Business" data-badge="">Polyester Business</option>
+                                                                  <option value="Polymer Business" data-badge="">Polymer Business</option>
+                                                                  <option value="Punjab Office" data-badge="">Punjab Office</option>
+                                                                  <option value="RBML Solutions India" data-badge="">RBML Solutions India</option>
+                                                                  <option value="Rajasthan Office" data-badge="">Rajasthan Office</option>
+                                                                  <option value="Reliance BP Mobility" data-badge="">Reliance BP Mobility</option>
+                                                                  <option value="Reliance Intl Ltd." data-badge="">Reliance Intl Ltd.</option>
+                                                                  <option value="Surat Office" data-badge="">Surat Office</option>
+                                                                  <option value="Tamilnadu" data-badge="">Tamilnadu</option>
+                                                                  <option value="Tamilnadu R&M Office" data-badge="">Tamilnadu R&M Office</option>
+                                                                  <option value="Uttar Pradesh - East Office" data-badge="">Uttar Pradesh - East Office</option>
+                                                                  <option value="Uttar Pradesh - West Office" data-badge="">Uttar Pradesh - West Office</option>
+                                                                  <option value="Vadodara OfficE" data-badge="">Vadodara Office</option>
+                                                                  <option value="West Bengal" data-badge="">West Bengal</option>
+                                                                  <option value="West Bengal Office" data-badge="">West Bengal Office</option>
+                                                                </select>
+                                                              </td>
+                                                            </tr>
+
+                                                            <!-- Add more rows here as needed -->
+                                                          </table>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <table class="table table-borderless2">
+                                                                <tr>
+                                                                  <td class="label-column"><label for="name">Name:</label></td>
+                                                                  <td>
+                                                                    <select id="name" name="name" class="form-select">
+                                                                      <option value="option1">Option 1</option>
+                                                                      <option value="option2">Option 2</option>
+                                                                      <!-- Add more options here -->
+                                                                    </select>
+                                                                  </td>
+                                                                </tr>
+                                                            </table>
+                                                          <!-- Second column content here -->
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                      <!-- <div class="row">
+                                                        <div class="col-12">
+                                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                      </div> -->
+     
+                                                  </div>
+                                                
+
+                                  
+                                                                                                                                        <h3>Company Details</h3>
+                                                        <div class="col-md-12 col-sm-12" id="companydet">
+                                                            <div class="form-group col-md-6 col-sm-6">
+
+                                                                <table class="table table-borderless">
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="CompanyNm">*Company Name:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="CompanyNm" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="Address1">Address 1:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="Address1" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="Address2">Address 2:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="Address2" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="Website">Website:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="Website" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="Fax">Fax:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="Fax" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td class="label-column"><label for="Phone">Phone:</label></td>
+                                                                      
+                                                                      <td>
+                                                                        <input type="text" class="form-control input-sm" id="Phone" placeholder="" >
+                                                                      </td>
+                                                                    </tr>
+                                                                </table>
+
+                                                            </div>
+
+                                                                                    <div class="form-group col-md-6 col-sm-6">
+
+
+                                                                                        <table class="table table-borderless">
+                                                                                            <tr>
+                                                                                              <td class="label-column"><label for="Country">*Country:</label></td>
+                                                                                              
+                                                                                              <td>
+                                                                                                <input type="text" class="form-control input-sm" id="Country" placeholder="" >
+                                                                                              </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                              <td class="label-column"><label for="State">*State:</label></td>
+                                                                                              
+                                                                                              <td>
+                                                                                                <input type="text" class="form-control input-sm" id="State" placeholder="" >
+                                                                                              </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                              <td class="label-column"><label for="District">District:</label></td>
+                                                                                              
+                                                                                              <td>
+                                                                                                <input type="text" class="form-control input-sm" id="District" placeholder="" >
+                                                                                              </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                              <td class="label-column"><label for="City">City:</label></td>
+                                                                                              
+                                                                                              <td>
+                                                                                                <input type="text" class="form-control input-sm" id="City" placeholder="" >
+                                                                                              </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                              <td class="label-column"><label for="Pincode">Pincode:</label></td>
+                                                                                              
+                                                                                              <td>
+                                                                                                <input type="text" class="form-control input-sm" id="Pincode" placeholder="" >
+                                                                                              </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                        
+                                                                                        
+
+
+                                                                                                       
+                                                                                                        </div>
+
+                                                                                                    </div>
+
+
+                                                                                                    <h3>Personal Details</h3>
+                                                                                                    <div class="col-md-12 col-sm-12" id="companydet">
+                                                                                                        <div class="form-group col-md-6 col-sm-6">
+
+                                                                                                        <table class="table table-borderless">
+                                                                                                            <tr>
+                                                                                                                <td class="label-column"><label for="fname">*First Name:</label></td>
+                                                                                                                
+                                                                                                                <td>
+                                                                                                                    <input type="text" class="form-control input-sm" id="fname" placeholder="" >
+                                                                                                                </td>
+                                                                                                              </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="label-column"><label for="LastName">*Last Name:</label></td>
+                                                                                                                
+                                                                                                                <td>
+                                                                                                                    <input type="text" class="form-control input-sm" id="LastName" placeholder="">
+                                                                                                                </td>
+                                                                                                              </tr>
+                                                                                                          </table>
+                                                                                                        </div>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                
+
+                                                                                                                <div class="form-group col-md-6 col-sm-6">
+
+                                                                                                                    <table class="table table-borderless">
+                                                                                                                    <tr>
+                                                                                                                        <td class="label-column"><label for="Mobile">*Mobile:</label></td>
+                                                                                                                        
+                                                                                                                        <td>
+                                                                                                                            <input type="text" class="form-control input-sm" id="Mobile" placeholder="" >
+                                                                                                                        </td>
+                                                                                                                      </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td class="label-column"><label for="Email">*Email ID:</label></td>
+                                                                                                                        
+                                                                                                                        <td>
+                                                                                                                            <input type="text" class="form-control input-sm" id="Email" placeholder="">
+                                                                                                                        </td>
+                                                                                                                      </tr>
+                                                                                                                  </table>
+                                                                                                                </div>
+                                                                                                                    
+                                                                                                                    
+
+                                                                                                                        
+                                                                                                                        
+
+                                                                                                                        <div class="form-group col-md-12 col-sm-12">
+                                                                                                                            <table class="table table-borderless">
+                                                                                                                            <tr>
+                                                                                                                                <td class="label-column"><label for="address">Note:</label></td>
+                                                                                                                                
+                                                                                                                                <td>
+                                                                                                                                    <textarea class="form-control input-sm" id="address" rows="3" ></textarea>
+                                                                                                                                </td>
+                                                                                                                              </tr>
+                                                                                                                          </table>
+                                                                                                                            
+                                                                                                                            
+
+                                                                                                                            <!-- <div class="form-check form-switch">
+                                                                                                                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="checked">
+                                                                                                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Reliance Agent / Partner</label>
+                                                                                                                                </div>
+                                                                                                                            </div> -->
+
+                                                                                                                            <div class="form-check form-switch">
+                                                                                                                                <!-- <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> -->
+                                                                                                                                <input type ="checkbox" checked data-toggle = "toggle" data-style = "ios">
+                                                                                                                                <label class="form-check-label" for="flexSwitchCheckChecked">Reliance Agent / Partner</label>
+                                                                                                                              </div>
+
+                                                                                                                        </div>
+
+
+                                                                                                                        <!-- <div class="col-md-12 col-sm-12">
+                                                                                                                            <div class="form-group col-md-3 col-sm-3">
+                                                                                                                                <input type="submit" class="btn btn-primary" value="Submit"/>
+                                                                                                                            </div>
+                                                                                                                        </div> -->
+                                                                                                                    </form>
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                            <footer class="sticky-footer bg-secondary py-3">
+                                                                                                                <div class="container custom-footer">
+                                                                                                                  <button type="button" class="btn btn-success">Save</button>
+                                                                                                                  <button type="button" class="btn btn-danger">Reset</button>
+                                                                                                                </div>
+                                                                                                              </footer>
+
+
+                                                                                                            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+                                                                                                                                                                                                                                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+                                                                                                                                                                                                                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
+                                                                                                        </body>
+
+
+
+                                                                                                        
+
+                                                                                                        <script src="js/jquery.min.js"></script>
+
+                                                                                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+                                                                                                        <script src="js/main.js"></script>
+
+                                                                                                    </html>
